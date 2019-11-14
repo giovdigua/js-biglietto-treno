@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+#risulato{
+    display: none;
+}
+#risulato.show{
+    display: block;
+    font-size: 28px;
+    text-align: center;
+
+}
+#error{
+    display: none;
+}
+#error.show{
+    font-size: 28px;
+    color: red;
+    display: block;
+}
+
+#prezzo{
+    font-weight: bold;
+}
+
+#under18{
+    display: none;
+}
+#over65{
+    display: none;
+}
+#under18.show{
+    display: block;
+}
+#over65.show{
+    display: block;
+}
