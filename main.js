@@ -7,38 +7,38 @@ alert('Segui le istruzioni a schermo per calcolare il costo del tuo biglietto');
 //creo le variabili per memorizzare i dati inseriti dagli utenti,dichiaro le variabili per i calcoli
 var result;
 var sconto;
-var km = parseInt(prompt('Inserisci i KM che vuoi percorrere'));
-var eta = parseInt(prompt('Inserisci la tua età'));
+var km = prompt('Inserisci i KM che vuoi percorrere');
 //controllo se il dato km è un numero e se è maggiore di zero e do un messaggio di errore all'utente in caso negativo
 if (isNaN(km) || (km <= 0)){
     document.getElementById('error').innerHTML='Non hai inserito una dato corretto nella casella km si prega di ricaricare la pagina per ricominciare il calcolo';
     document.getElementById('error').setAttribute('class','show');
-}
-//controllo se il dato età è un numero e se è maggiore di zero e do un messaggio di errore all'utente in caso negativo
-else if (isNaN(eta) || (eta<=0)) {
-    document.getElementById('error').innerHTML='Non hai inserito una dato corretto nella casella età si prega di ricaricare la pagina per ricominciare il calcolo';
-    document.getElementById('error').setAttribute('class','show');
-}//se il controllo inserimento dati è passato senza errori eseguo i calcoli
-else{
-    document.getElementById('risulato').setAttribute('class','show');
-    result = km * 0.21;
-    console.log(result);
-    if (eta < 18) {
-        sconto = (20 * result)/100;
-        console.log(sconto);
-        result = result - sconto;
-        console.log(result);
-        document.getElementById('prezzo').innerHTML= result;
-        document.getElementById('under18').setAttribute('class','show');
-    }else if (eta >= 65) {
-        sconto = (40 * result)/100
-        console.log(sconto);
-        result = result - sconto;
-        console.log(result);
-        document.getElementById('prezzo').innerHTML= result;
-        document.getElementById('over65').setAttribute('class','show');
     }else{
-        document.getElementById('prezzo').innerHTML= result;
-    }
-
+    var eta = prompt('Inserisci la tua età');
+    //controllo se il dato età è un numero e se è maggiore di zero e do un messaggio di errore all'utente in caso negativo
+    if (isNaN(eta) || (eta<=0)) {
+            document.getElementById('error').innerHTML='Non hai inserito una dato corretto nella casella età si prega di ricaricare la pagina per ricominciare il calcolo';
+            document.getElementById('error').setAttribute('class','show');
+        }//se il controllo inserimento dati è passato senza errori eseguo i calcoli
+        else{
+            document.getElementById('risulato').setAttribute('class','show');
+            result = km * 0.21;
+            console.log(result);
+            if (eta < 18) {
+                sconto = (20 * result)/100;
+                console.log(sconto);
+                result = result - sconto;
+                console.log(result);
+                document.getElementById('prezzo').innerHTML= result;
+                document.getElementById('under18').setAttribute('class','show');
+            }else if (eta >= 65) {
+                sconto = (40 * result)/100
+                console.log(sconto);
+                result = result - sconto;
+                console.log(result);
+                document.getElementById('prezzo').innerHTML= result;
+                document.getElementById('over65').setAttribute('class','show');
+            }else{
+                document.getElementById('prezzo').innerHTML= result;
+            }
+        }
 }
