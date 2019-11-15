@@ -21,19 +21,19 @@ if (isNaN(km) || (km <= 0)){
         }//se il controllo inserimento dati è passato senza errori eseguo i calcoli
         else{
             document.getElementById('risulato').setAttribute('class','show');
-            result = km * 0.21;
+            result = (km * 0.21).toFixed(2);
             console.log(result);
             if (eta < 18) {
                 sconto = (20 * result)/100;
                 console.log(sconto);
-                result = result - sconto;
+                result = (result - sconto).toFixed(2);
                 console.log(result);
                 document.getElementById('prezzo').innerHTML= result;
                 document.getElementById('under18').setAttribute('class','show');
             }else if (eta >= 65) {
                 sconto = (40 * result)/100
                 console.log(sconto);
-                result = result - sconto;
+                result = (result - sconto).toFixed(2);
                 console.log(result);
                 document.getElementById('prezzo').innerHTML= result;
                 document.getElementById('over65').setAttribute('class','show');
@@ -42,3 +42,5 @@ if (isNaN(km) || (km <= 0)){
             }
         }
 }
+
+console.log(eta);
